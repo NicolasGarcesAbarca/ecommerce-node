@@ -6,16 +6,18 @@ specifiers:
   '@types/node': 18.14.1
   body-parser: 1.20.2
   concurrently: 7.6.0
-  ejs: ^3.1.8
+  ejs: 3.1.8
   express: 4.18.2
   nodemon: 2.0.20
   rimraf: ^4.1.2
   typescript: 4.9.5
+  zod: ^3.20.6
 
 dependencies:
   body-parser: 1.20.2
   ejs: 3.1.8
   express: 4.18.2
+  zod: 3.20.6
 
 devDependencies:
   '@types/body-parser': 1.19.2
@@ -946,3 +948,7 @@ packages:
       y18n: 5.0.8
       yargs-parser: 21.1.1
     dev: true
+
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+    dev: false
