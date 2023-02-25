@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import adminRouter from './routes/admin.js';
 import shopRoutes from './routes/shop.js';
 import { fileURLToPath } from 'url';
-
+import { error } from './controller/error.js';
 const app = express();
 
 declare global{
@@ -25,8 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRouter);
 app.use(shopRoutes);
 
-app.use((req:Request, res:Response, next:NextFunction) => {
-    res.status(404).render('404',{ pageTitle: 'Page Not Found'})//sendFile(path.join(__dirname, 'views', '404.html'));
-});
+app.use(error.get404);
 
 app.listen(3000);
