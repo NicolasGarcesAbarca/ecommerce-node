@@ -1,16 +1,11 @@
-import express,{Response,Request, NextFunction } from "express";
-import { getProducts } from "./admin.js";
+import express from "express";
+import { shop } from "../controller/shop.js";
 const router = express.Router();
 
-router.get('/', (req:Request, res:Response<any>, next:NextFunction) => {
-  const products = getProducts();
-  res.render('shop', {
-    prods: products,
-    pageTitle: 'Shop',
-    path: '/',
-    hasProducts: products.length > 0,
-    activeShop: true,
-    productCSS: true
-  });
-});
+router.get('/', shop.getIndex);
+router.get('/products', shop.getProducts);
+router.get('/cart', shop.getCart);
+router.get('/orders', shop.getOrders);
+router.get('/checkout', shop.getCheckout);
+
 export default router;
