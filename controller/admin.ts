@@ -16,7 +16,8 @@ export const admin={
         const imageUrl = req.body.imageUrl;
         const price = req.body.price;
         const description = req.body.description;
-        addProduct({title, imageUrl, price, description});
+        const id = Math.random().toString();
+        addProduct({id, title, imageUrl, price, description});
         res.redirect('/');
       },
       getProducts(req:Request, res:Response){

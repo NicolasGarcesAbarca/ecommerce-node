@@ -1,4 +1,4 @@
-import { getProducts } from '../model/product.js';
+import { getProductById, getProducts } from '../model/product.js';
 import { Request, Response } from 'express';
 
 export const shop={
@@ -8,6 +8,16 @@ export const shop={
             prods: products,
             pageTitle: 'All Products',
             path: '/products'
+          });
+       
+      },
+      getProductById(req:Request, res:Response){
+        const { id }=req.params;
+        const product = getProductById(id);
+          res.render('shop/product-detail', {
+            product: product,
+            pageTitle: 'Product Detail',
+            path: '/products'// in navigation will be highlighted
           });
        
       },
