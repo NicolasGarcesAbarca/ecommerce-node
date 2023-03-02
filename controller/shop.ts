@@ -46,6 +46,10 @@ export const shop={
           path: '/checkout',
           pageTitle: 'Checkout'
         });
+      },
+      postCart(req:Request, res:Response){
+        const { productId }=req.body;
+        console.log(productId);
+        res.redirect('/cart');
       }
-      
 }

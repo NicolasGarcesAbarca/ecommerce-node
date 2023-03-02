@@ -7,6 +7,7 @@ router.get('/products', shop.getProducts);
 // delete before /:id~~
 router.get('/products/:id', shop.getProductById);
 router.get('/cart', shop.getCart);
+router.post('/cart', shop.postCart);
 router.get('/orders', shop.getOrders);
 router.get('/checkout', shop.getCheckout);
 
