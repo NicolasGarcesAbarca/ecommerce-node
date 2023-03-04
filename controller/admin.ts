@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getProducts, addProduct } from '../model/product.js';
+import { getProducts, addProduct } from '../model/product';
 
 export const admin = {
   getAddProduct(_req: Request, res: Response) {

@@ -1,4 +1,4 @@
-import { getProductById, getProducts } from '../model/product.js';
+import { getProductById, getProducts } from '../model/product';
 import { Request, Response } from 'express';
 
 export const shop = {
