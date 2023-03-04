@@ -1,11 +1,13 @@
 import path,{dirname} from 'path';
-import express, { Express, Request, Response ,NextFunction} from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import adminRouter from './routes/admin.js';
 import shopRoutes from './routes/shop.js';
 import { fileURLToPath } from 'url';
 import { error } from './controller/error.js';
-const app = express();
+import 'dotenv/config'
+
+export const app = express();
 
 declare global{
     var appRoot:string;
@@ -27,4 +29,7 @@ app.use(shopRoutes);
 
 app.use(error.get404);
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+    console.log(process.env);
+});
