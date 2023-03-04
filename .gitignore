@@ -2,3 +2,5 @@
 /node_modules
 #dist from typescript
 /dist
+#env
+.env
