@@ -1,4 +1,4 @@
-import { API } from "../controller/api";
+import { API } from "../controller/api.js";
 import express from "express";
 
 const router = express.Router();
